@@ -1,3 +1,5 @@
+/* src\components\ProgressRing.css */
+
 svg {
   width: 120px;
   height: 120px;
@@ -15,5 +17,5 @@ svg {
   stroke: var(--primary);
   stroke-width: 8;
   stroke-linecap: round;
-  transition: stroke-dasharray 0.5s ease;
+  transition: stroke-dashoffset 0.5s ease;
 }
