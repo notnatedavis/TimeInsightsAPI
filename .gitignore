@@ -1,7 +1,6 @@
-# Compiled class file
-*.class
+# .gitignore
 
-# Log file
+*.class
 *.log
 
 # BlueJ files
