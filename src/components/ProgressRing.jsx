@@ -1,10 +1,9 @@
-//   src\components\ProgressRing.js
+//   src\components\ProgressRing.jsx
 //   reusable components for Progress Ring
 
 const ProgressRing = ({ percent }) => {
-  
   const circumference = 2 * Math.PI * 45;
-  const strokeDashoffset = circumference * (1 - percent / 100);
+  const strokeDashoffset = circumference - (percent / 100) * circumference;
 
   return (
     <svg viewBox="0 0 100 100">
@@ -20,3 +19,5 @@ const ProgressRing = ({ percent }) => {
     </svg>
   );
 };
+
+export default ProgressRing;

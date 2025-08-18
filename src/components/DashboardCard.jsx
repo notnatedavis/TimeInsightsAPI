@@ -1,4 +1,4 @@
-//   src\components\DashboardCard.js
+//   src\components\DashboardCard.jsx
 //   reusable components for Dashboard Card
 
 const DashboardCard = ({ title, children }) => (

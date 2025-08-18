@@ -1,9 +1,9 @@
-//   src\views\Dashboard.js
+//   src\views\Dashboard.jsx
 //   main views
 
 import React, { useState, useEffect } from 'react';
-import DashboardCard from '../components/DashboardCard';
-import ProgressRing from '../components/ProgressRing';
+import DashboardCard from '../components/DashboardCard.jsx';
+import ProgressRing from '../components/ProgressRing.jsx';
 import { 
   getUnixTime, 
   getWeek, 
@@ -37,11 +37,14 @@ const Dashboard = () => {
           getProgress(`${currentYear}-01-01`, `${currentYear}-12-31`)
         ]);
 
+        // handle progress API response
         setTimeData({
           unixTime,
           week,
           isLeapYear,
-          progress,
+          progress: {
+            percent: Math.round(progress.float * 100) // convert to %
+          },
           loading: false,
           error: null
         });
@@ -63,7 +66,7 @@ const Dashboard = () => {
     return () => clearInterval(interval);
   }, [currentYear]);
 
-  // Loading skeleton
+  // loading skeleton
   if (timeData.loading) {
     return (
       <div className="dashboard-grid">
@@ -76,7 +79,7 @@ const Dashboard = () => {
     );
   }
 
-  // Error state
+  // error state
   if (timeData.error) {
     return (
       <div className="error-state">
@@ -87,9 +90,34 @@ const Dashboard = () => {
     );
   }
 
+  
   return (
     <div className="dashboard-grid">
-      {/* Cards remain the same */}
+      <DashboardCard title="Current Unix Time">
+        <div className="unix-time">
+          {timeData.unixTime && formatUnix(timeData.unixTime)}
+        </div>
+        <div className="timestamp">{timeData.unixTime}</div>
+      </DashboardCard>
+
+      <DashboardCard title="Week Number">
+        <div className="week-number">{timeData.week}</div>
+        <div>ISO Week</div>
+      </DashboardCard>
+
+      <DashboardCard title="Leap Year">
+        <div className="leap-year">
+          {timeData.isLeapYear ? 'Yes' : 'No'}
+        </div>
+        <div>{currentYear}</div>
+      </DashboardCard>
+
+      <DashboardCard title="Year Progress">
+        <ProgressRing percent={timeData.progress?.percent || 0} />
+        <div className="progress-text">
+          {timeData.progress?.percent || 0}% complete
+        </div>
+      </DashboardCard>
     </div>
   );
 };

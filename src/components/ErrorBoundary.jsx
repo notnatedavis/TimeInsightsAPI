@@ -1,4 +1,4 @@
-//   src\components\ErrorBoundary.js
+//   src\components\ErrorBoundary.jsx
 //   reusable components for Error Boundary
 
 import React from 'react';

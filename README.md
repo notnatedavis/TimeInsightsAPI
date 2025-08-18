@@ -10,11 +10,11 @@ TimeInsightsAPI/
     - robots.txt
  - src/
     - components/
-        - DashboardCard.js
+        - DashboardCard.jsx
         - DashboardCard.css
-        - ProgressRing.js
+        - ProgressRing.jsx
         - ProgressRing.css
-        - ErrorBoundary.js
+        - ErrorBoundary.jsx
     - services/
         - digidates.js
     - utils/
@@ -23,11 +23,12 @@ TimeInsightsAPI/
     - views/
         - Dashboard.js
         - Dashboard.css
-    - App.js
+    - App.jsx
     - App.css
-    - index.js
+    - main.jsx
     - index.css
  - ReadMe.md
+ - index.html
  - .gitignore
  - package.json
  - vite.config.js 

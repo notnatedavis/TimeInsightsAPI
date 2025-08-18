@@ -1,9 +1,9 @@
-//   src\App.js
+//   src\App.jsx
 //   root component
 
 import React from 'react';
-import Dashboard from './views/Dashboard';
-import ErrorBoundary from './components/ErrorBoundary';
+import Dashboard from './views/Dashboard.jsx';
+import ErrorBoundary from './components/ErrorBoundary.jsx';
 import './App.css';
 
 function App() {
