@@ -11,7 +11,9 @@ TimeInsightsAPI/
  - src/
     - components/
         - DashboardCard.js
+        - DashboardCard.css
         - ProgressRing.js
+        - ProgressRing.css
         - ErrorBoundary.js
     - services/
         - digidates.js
@@ -20,8 +22,11 @@ TimeInsightsAPI/
         - errorHandler.js
     - views/
         - Dashboard.js
+        - Dashboard.css
     - App.js
+    - App.css
     - index.js
+    - index.css
  - ReadMe.md
  - .gitignore
  - package.json
