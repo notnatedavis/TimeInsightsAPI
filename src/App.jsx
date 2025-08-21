@@ -24,4 +24,5 @@ function App() {
   );
 }
 
+// critical - must keep to allow importing in other files
 export default App;

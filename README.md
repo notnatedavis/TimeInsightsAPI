@@ -21,7 +21,7 @@ TimeInsightsAPI/
         - dateUtils.js
         - errorHandler.js
     - views/
-        - Dashboard.js
+        - Dashboard.jsx
         - Dashboard.css
     - App.jsx
     - App.css
@@ -31,7 +31,7 @@ TimeInsightsAPI/
  - index.html
  - .gitignore
  - package.json
- - vite.config.js 
+ - vite.config.js
 
 ## Table of Contents
 - [Introduction](#introduction)

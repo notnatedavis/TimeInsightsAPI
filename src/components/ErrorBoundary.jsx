@@ -34,4 +34,5 @@ class ErrorBoundary extends React.Component {
   }
 }
 
+// critical - must keep to allow importing in other files
 export default ErrorBoundary;
