@@ -42,7 +42,7 @@ TimeInsightsAPI/
 
 TimeInsightsAPI is a repository containing `Time Insights Dashboard` , this is my attempt a creating a modern React-based web application that provides real-time (5-10sec request intervals) data open sourced through [DigiDates.de](digidates.de). This dashboard displays `4` key time related metrics sourced from the DigiDates.de REST API. Built with Vite for optimal performance and development experience, the application features a responsive grid layout, automatic data refresh, and robust error handling. Through clean, minimal, simplistic design this ensures an intuitive user experience on the client side while demonstrating techincal proficiency in React hooks, API integration, and modern JavaScript development practices on the host side.
 
-### Order of Operations : (1-6) 
+### Order of Operations : (1-6) Project Execution Overview
 
 *upon launching `npm run dev`*
 
@@ -86,24 +86,29 @@ TimeInsightsAPI is a repository containing `Time Insights Dashboard` , this is m
 - Modern UI/UX : clean minimalist design with smooth animations + effects
 - API monitering : built-in endpoint testing & validation to detect potential issues
 
-## Prerequisites (UPDATE TO INCLUDE GIT!)
+## Prerequisites
 
 _Asahi Linux (Fedora)_
-- `sudo apt update`
-- `sudo apt install nodejs npm`
+- `sudo dnf update`
+- `sudo dnf install git`
+- `sudo dnf install nodejs`
+- `git --version` verifies installation
 - `node --version` verifies installation
 - `npm --version` verifies installation
 
 _Windows_
+- download [Git](https://git-scm.com/downloads) , run installer and follow the setup instructions
 - download [Node.js](nodejs.org) , run installer and follow the setup instructions
 - open CommandPrompt `Windows + cmd + enter`
+- `git --version` verifies installation
 - `node --version` verifies installation
 - `npm --version` verifies installation
 
 _MacOS_  
 - open terminal and enter `brew --version` if exists skip next step
 - download [Homebrew](brew.sh) , run installer and follow setup instructions
-- open terminal , `brew install node`
+- open terminal ,`brew install git` , `brew install node`
+- `git --version` verifies installation
 - `node --version` verifies installation
 - `npm --version` verifies installation
 
