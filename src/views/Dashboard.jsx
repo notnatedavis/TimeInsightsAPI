@@ -41,6 +41,10 @@ const Dashboard = () => {
       const testLeap = await fetch(`https://digidates.de/api/v1/leapyear?year=${currentYear}`);
       const testLeapData = await testLeap.json();
       console.log('Leap Year API response:', testLeapData);
+
+      // Test the service function directly
+      const serviceLeap = await getLeapYear(currentYear);
+      console.log('Service function result:', serviceLeap);
     } catch (error) {
       console.error('Direct API test failed:', error);
     }
@@ -110,7 +114,7 @@ const Dashboard = () => {
     };
 
     fetchData();
-    const interval = setInterval(fetchData, 30000);
+    const interval = setInterval(fetchData, 30000); // setInterval(data refresh time here)
 
     return () => clearInterval(interval);
   }, [currentYear]);
@@ -200,6 +204,10 @@ const Dashboard = () => {
         )}
       </DashboardCard>
     </div>
+
+    // include more conditional rendering cards
+
+    // implement (time till birthday , )
   );
 };
 

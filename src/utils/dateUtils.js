@@ -3,7 +3,7 @@
 
 export const formatUnix = (timestamp) => {
   const date = new Date(timestamp * 1000);
-  return date.toLocaleString('en-GB', {
+  return date.toLocaleString(undefined, {
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
@@ -12,6 +12,10 @@ export const formatUnix = (timestamp) => {
     year: 'numeric'
   });
 };
+// example outputs for different users
+// New York : "4/26/2024, 10:05:32 AM"
+// Berlin : "26.04.2024, 16:05:32"
+// both valid formats
 
 export const getCurrentYear = () => {
   return new Date().getFullYear().toString();

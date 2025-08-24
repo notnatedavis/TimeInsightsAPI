@@ -9,27 +9,7 @@ const handleResponse = async (response) => {
     const error = await response.text();
     throw new Error(error || `API error: ${response.status}`);
   }
-
-  try {
-    const data = await response.json();
-
-    // handle different response formats from different endpoints
-    if (typeof data === 'object' && data !== null) {
-      // if an object with a single key, return value
-      const keys = Object.keys(data);
-      if (keys.length === 1) {
-        return data[keys[0]];
-      }
-      // for objects with multiple keys (like progress), return the whole object
-      return data;
-    }
-
-    // for primitive responses
-    return data;
-    
-  } catch (error) {
-    throw new Error('Failed to parse API response');
-  }
+  return response.json();
 };
 
 export const getUnixTime = async () => {
@@ -47,7 +27,7 @@ export const getWeek = async (date) => {
 export const getLeapYear = async (year) => {
   const response = await fetch(`${API_BASE}/leapyear?year=${year}`);
   const data = await handleResponse(response);
-  return data.leap; // extract leap value
+  return data.leapyear; // extract leap value
 };
 
 export const getProgress = async (start, end) => {

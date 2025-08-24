@@ -16,6 +16,7 @@ const ProgressRing = ({ percent }) => {
         cy="50"
         r={radius}
       />
+      
       <circle
         className="ring-progress"
         cx="50"
