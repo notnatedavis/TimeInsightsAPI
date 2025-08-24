@@ -20,6 +20,20 @@
   animation: loading 1.5s infinite;
 }
 
+.leap-year {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.leap-yes {
+  color: #10b981; /* green Yes */
+}
+
+.leap-no {
+  color: #da6d75; /* red No */
+}
+
 .error-state {
   text-align: center;
   padding: 2rem;

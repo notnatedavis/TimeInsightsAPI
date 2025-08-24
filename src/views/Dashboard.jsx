@@ -126,7 +126,7 @@ const Dashboard = () => {
   if (timeData.loading) {
     return (
       <div className="dashboard-grid">
-        {[...Array(4)].map((_, i) => (
+        {[...Array(4)].map((_, i) => ( // UPDATE (make # of cards const / called)
           <DashboardCard key={i} title="Loading...">
             <div className="skeleton-loader" />
           </DashboardCard>
@@ -146,19 +146,26 @@ const Dashboard = () => {
     );
   }
 
+  // format Unix time
+  const formattedTime = timeData.unixTime ? formatUnix(timeData.unixTime) : null;
   
   return (
     <div className="dashboard-grid"> 
       
       <DashboardCard title="Current Unix Time"> 
-        {timeData.unixTime ? ( 
+        {formattedTime ? ( 
           // conditional rendering of Unix Time
+          // current format...
+          // "{month} {day#}, {year}" n/
+          // "HH:MM:SS {"AM"}/{"PM"}"
           <>
             <div className="unix-time">
-              {formatUnix(timeData.unixTime)}
+              <div className="date-part">{formattedTime.date}</div>
+              <div className="time-part">{formattedTime.time}</div>
             </div>
-            <div className="timestamp">{timeData.unixTime}</div>
           </>
+          // <div className="timestamp">{timeData.unixTime}</div>
+          // ^ moved just because not needed
         ) : (
           <div className="loading-data">Loading...</div>
         )}
@@ -168,7 +175,7 @@ const Dashboard = () => {
         {timeData.week !== null && timeData.week !== undefined ? ( 
           // conditional rendering of Week Number
           <>
-            <div className="week-number">{timeData.week}</div>
+            <div className="week-number">{timeData.week}/52</div>
             <div>ISO Week</div>
           </>
         ) : (
@@ -180,7 +187,7 @@ const Dashboard = () => {
         {timeData.isLeapYear !== null && timeData.isLeapYear !== undefined ? (
           // conditional rendering of Leap Year
           <>
-            <div className="leap-year">
+            <div className={`leap-year ${timeData.isLeapYear ? 'leap-yes' : 'leap-no'}`}>
               {timeData.isLeapYear ? 'Yes' : 'No'}
             </div>
             <div>{currentYear}</div>

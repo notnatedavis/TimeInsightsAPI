@@ -11,13 +11,14 @@ function App() {
     <ErrorBoundary>
       <div className="app-container">
         <header className="app-header">
-          <h1>Time Insights Dashboard</h1>
+          <h1>Time Insights Dashboard (v1)</h1>
         </header>
         <main>
           <Dashboard />
         </main>
         <footer className="app-footer">
-          <p>Data from DigiDates.de API</p>
+          <p>Open source data from DigiDates.de API</p>
+          <p>@notenatedavis on github</p>
         </footer>
       </div>
     </ErrorBoundary>

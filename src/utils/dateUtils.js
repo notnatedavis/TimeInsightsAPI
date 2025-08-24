@@ -3,18 +3,31 @@
 
 export const formatUnix = (timestamp) => {
   const date = new Date(timestamp * 1000);
-  return date.toLocaleString(undefined, {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
+
+  // format date part
+  const dateStr = date.toLocaleString(undefined, {
     day: '2-digit',
     month: 'short',
     year: 'numeric'
   });
+
+  // format time part
+  const timeStr = date.toLocaleString(undefined, {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true
+  });
+  
+  return {
+    date: dateStr,
+    time: timeStr,
+    full: `${dateStr}, ${timeStr}`
+  };
 };
 // example outputs for different users
-// New York : "4/26/2024, 10:05:32 AM"
-// Berlin : "26.04.2024, 16:05:32"
+// New York: {date: "Aug 24, 2025", time: "02:14:38 PM", full: "Aug 24, 2025, 02:14:38 PM"}
+// Berlin: {date: "24.08.2025", time: "14:14:38", full: "24.08.2025, 14:14:38"}
 // both valid formats
 
 export const getCurrentYear = () => {
